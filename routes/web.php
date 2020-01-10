@@ -80,3 +80,52 @@ Route::get('pesan/{a?}/{b?}/{c?}', function($mkn=null,$mnm=null,$hrg=null){
 		return " Anda Belum Memesan Sesuatu";
 	}
 });
+
+// Mencari semua model:
+Route::get('/testmodel1', function(){
+	$query = App\Post::all();
+	return $query;
+});
+
+// Mencari model berdasarkan id:
+Route::get('/testmodel2', function(){
+	$query = App\Post::find(1);
+	return $query;
+});
+
+// Mencari model berdasarkan title:
+Route::get('testmodel3', function(){
+	$query = App\Post::where('title','like','%cepat nikah%')->get();
+	return $query;
+});
+
+// Mengubah record, (hapus semua isi function) :
+Route::get('testmodel4', function(){
+	$post = App\Post::find(1);
+	$post->title = "Ciri Keluarga Sakinah";
+	$post->save();
+	return $post;
+});
+
+// Menghapus record, (hapus semua isi function) :
+Route::get('testmodel5', function(){
+	$post = App\Post::find(1);
+	$post->delete();
+	// check data di Database
+});
+
+// Menambah record, (hapus semua isi function) :
+Route::get('testmodel6', function(){
+	$post = new App\Post;
+	$post->title = "7 Amalan Pembuka Jodoh";
+	$post->content = "Shalat malam, sedekah, puasa sunah, silaturahmi, 
+	                senyum, doa, tobat";
+	$post->save();
+	return $post;
+	// check record baru di Database
+});
+
+Route::get('/latihan', function(){
+	$query = App\Latihan::all();
+	return $query;
+});
