@@ -129,3 +129,33 @@ Route::get('/latihan', function(){
 	$query = App\Latihan::all();
 	return $query;
 });
+
+Route::get('/latihan-1', function(){
+	$query =  App\Latihan::where('agama','=','Islam')->get();
+	return $query;
+});
+
+Route::get('/latihan-2', function(){
+	$query =  App\Latihan::select('id','nama','agama')
+	->where('agama','=','islam')
+	->get();
+	return $query;
+});
+
+Route::get('/latihan/{id}', function($id){
+	$gaji = App\Latihan::findOrFail($id);
+	return $gaji;
+});
+
+Route::get('tambah-data-gaji', function()
+{
+	$gaji = New App\Latihan();
+	$gaji->nama = 'Indah Mambo';
+	$gaji->jabatan = 'Sekertaris';
+	$gaji->jk = 'Perempuan';
+	$gaji->alamat = 'Bojong Honey';
+	$gaji->total_gaji = 5000000;
+	$gaji->agama = 'Islam';
+	$gaji->save();
+	return $gaji;
+});
