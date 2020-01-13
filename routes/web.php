@@ -159,3 +159,14 @@ Route::get('tambah-data-gaji', function()
 	$gaji->save();
 	return $gaji;
 });
+
+// Controller
+Route::get('hallo', 'SekolahController@halo');
+Route::get('negara', 'SekolahController@negara');
+Route::get('smk', 'SekolahController@sekolah');
+Route::get('jurusan', 'SekolahController@jurusan');
+Route::get('rpl', 'SekolahController@rpl');
+Route::get('tkr', 'SekolahController@tkr');
+Route::get('rumah', 'SekolahController@alamat');
+Route::get('kucing/{warna?}', 'SekolahController@jeniskucing');
+Route::get('jual/{beli?}/{mkn?}/{$hrg?}', 'SekolahController@penjualan');
