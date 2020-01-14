@@ -169,4 +169,12 @@ Route::get('rpl', 'SekolahController@rpl');
 Route::get('tkr', 'SekolahController@tkr');
 Route::get('rumah', 'SekolahController@alamat');
 Route::get('kucing/{warna?}', 'SekolahController@jeniskucing');
-Route::get('jual/{beli?}/{mkn?}/{$hrg?}', 'SekolahController@penjualan');
+Route::get('jual/{mkn?}/{hrg?}', 'SekolahController@penjualan');
+
+// CRUD Route
+Route::get('book', 'BookController@index');
+Route::get('book-create/{judul}', 'BookController@create');
+Route::get('book/{id}', 'BookController@show');
+Route::get('book-edit/{id}/{jdl}', 'BookController@edit');
+Route::get('book-delete/{id}', 'BookController@delete');
+Route::get('latihan1', 'BookController@latihan1');
