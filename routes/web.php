@@ -187,3 +187,10 @@ Route::get('latihan1', 'BookController@latihan1');
 // Route::PUT('artikel/{id}', 'CrudController@update');
 // Route::DELETE('artikel/{id}/destroy', 'CrudController@destroy');
 Route::resource('artikel', 'CrudController');
+
+// Passing Data
+Route::get('passing', 'PracticeController@pass');
+Route::get('passing1', 'PracticeController@pass1');
+Route::get('penggajian', 'PracticeController@gaji');
+Route::get('barang', 'BarangController@index');
+
