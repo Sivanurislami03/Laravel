@@ -192,5 +192,18 @@ Route::resource('artikel', 'CrudController');
 Route::get('passing', 'PracticeController@pass');
 Route::get('passing1', 'PracticeController@pass1');
 Route::get('penggajian', 'PracticeController@gaji');
+
 Route::get('barang', 'BarangController@index');
 
+// Book Route
+Route::resource('buku', 'BookController');
+Route::resource('barang', 'BarangController');
+
+// Blade
+Route::get('home', function() {
+	return view('home');
+});
+
+Route::get('about', function() {
+	return view('about');
+});
